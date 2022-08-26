@@ -15,4 +15,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag mynodejsimage:latest
+      run: |
+         docker build . --file Dockerfile --tag saitrinadh444/sample:latest
+    
+    - name: Docker Login
+      uses: docker/login-action@v2.0.0
+      with:
+         registry: saitrinadh444/sample
+         username: saitrinadh444
+         password: saitrinadh444
+         
+    - name: Build the Docker image
+      run: |
+         docker build . --file Dockerfile --tag saitrinadh444/sample:latest
+    
