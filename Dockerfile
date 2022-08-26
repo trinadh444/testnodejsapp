@@ -1,4 +1,4 @@
-FROM node:16
+FROM 16-alpine3.15
 USER root
 WORKDIR /usr/src/app/
 RUN apk add git
