@@ -1,4 +1,5 @@
 FROM node:16
+USER root
 WORKDIR /usr/src/app/
 RUN apk add git
 RUN git clone https://github.com/SapphireDb/Example-NodeJs.git
