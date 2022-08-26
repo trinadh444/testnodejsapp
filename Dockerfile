@@ -1,9 +1,8 @@
-FROM node:16-alpine3.15
+FROM node:16
 USER root
-WORKDIR /usr/src/app/
-RUN apk add git
-RUN git clone https://github.com/SapphireDb/Example-NodeJs.git
-WORKDIR /usr/src/app/Example-NodeJs
+WORKDIR /usr/src/app
+COPY package*.json
 RUN npm install
-EXPOSE 80
+COPY . .
+EXPOSE 3000
 CMD [ "npm", "start" ]
